@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Ak-2o-hms">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First Screen-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" customModule="DelegateProtocols" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wEj-qo-wC2">
+                                <rect key="frame" x="20" y="167" width="374" height="286"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hhz-gl-SFY">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="236"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="236" id="ybZ-dG-Gu6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2G-Ag-F0v">
+                                        <rect key="frame" x="0.0" y="256" width="374" height="30"/>
+                                        <state key="normal" title="Pick an Image from other screen"/>
+                                        <connections>
+                                            <segue destination="Gmv-ye-R5l" kind="show" identifier="SelectionVC" id="btk-pS-6Aj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wEj-qo-wC2" secondAttribute="trailing" constant="20" id="84X-lS-Pzc"/>
+                            <constraint firstItem="wEj-qo-wC2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9Se-v3-nw9"/>
+                            <constraint firstItem="wEj-qo-wC2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="79" id="Jp2-xt-Jbr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="First Screen" id="zZF-hG-JNw"/>
+                    <connections>
+                        <outlet property="imageView" destination="hhz-gl-SFY" id="kEY-1D-ieN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.11594202898561" y="121.875"/>
+        </scene>
+        <!--Selection View Controller-->
+        <scene sceneID="yIi-rc-rq7">
+            <objects>
+                <viewController id="Gmv-ye-R5l" customClass="SelectionViewController" customModule="DelegateProtocols" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k2v-iF-zSm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lVM-hf-nbI">
+                                <rect key="frame" x="20" y="433" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAD-Tq-oPy">
+                                        <rect key="frame" x="0.0" y="0.0" width="183" height="30"/>
+                                        <state key="normal" title="SpongeBob"/>
+                                        <connections>
+                                            <action selector="spongeBobButtonPressed:" destination="Gmv-ye-R5l" eventType="touchUpInside" id="0Lw-LZ-xEB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHq-uP-Nsa">
+                                        <rect key="frame" x="191" y="0.0" width="183" height="30"/>
+                                        <state key="normal" title="Patrick"/>
+                                        <connections>
+                                            <action selector="patrickButtonPressed:" destination="Gmv-ye-R5l" eventType="touchUpInside" id="EMS-LY-UBX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Row-dR-zho" firstAttribute="trailing" secondItem="lVM-hf-nbI" secondAttribute="trailing" constant="20" id="6XU-uL-Xo3"/>
+                            <constraint firstItem="lVM-hf-nbI" firstAttribute="centerY" secondItem="k2v-iF-zSm" secondAttribute="centerY" id="DIw-Hq-yt3"/>
+                            <constraint firstItem="lVM-hf-nbI" firstAttribute="leading" secondItem="Row-dR-zho" secondAttribute="leading" constant="20" id="Qw0-Mm-nRv"/>
+                            <constraint firstItem="lVM-hf-nbI" firstAttribute="centerX" secondItem="k2v-iF-zSm" secondAttribute="centerX" id="btJ-TZ-dAy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Row-dR-zho"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sqp-P6-LiI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1673.913043478261" y="121.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tPC-w6-USE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Ak-2o-hms" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yT6-ZQ-3d9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pW8-Zy-fji"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaj-yQ-0Gi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="283" y="121"/>
+        </scene>
+    </scenes>
+</document>
